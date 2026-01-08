@@ -1,3 +1,6 @@
+import { Chart, ArcElement, Tooltip, Legend, PieController } from 'chart.js';
+Chart.register(ArcElement, Tooltip, Legend, PieController);
+
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 

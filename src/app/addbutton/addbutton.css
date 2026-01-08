@@ -1,0 +1,7 @@
+.add-button{
+    display: flex;
+    justify-content:flex-end;
+    /* border: 1px solid red; */
+    padding-right:1rem ;
+    
+}

@@ -1,0 +1,14 @@
+<div class="card shadow-sm mt-3">
+  <div class="card-body">
+    <h6 class="fw-bold mb-3">Income vs Expense</h6>
+
+    <div *ngIf="isBrowser()" style="width: 320px; height: 320px;">
+      <canvas
+        baseChart
+        [data]="chartData"
+        [type]="'pie'"
+        [options]="chartOptions">
+      </canvas>
+    </div>
+  </div>
+</div>  

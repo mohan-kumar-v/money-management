@@ -1,0 +1,15 @@
+.table-success th {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #d4edda, #c3e6cb);
+} 
+
+.add{
+  position: absolute;
+  left:90%;
+  bottom:8%;
+  width:8rem;
+  height:2.7rem
+}
+
