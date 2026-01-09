@@ -10,15 +10,15 @@ import { Transaction } from '../services/transaction';
 })
 export class Balance {
 
-totalIncome = 0;
-totalExpense = 0;
+  totalIncome = 0;
+  totalExpense = 0;
 
-constructor(private txService: Transaction) {}
+  constructor(private txService: Transaction) { }
 
-ngOnInit() {
-  this.txService.getTotalIncome().subscribe((v: number) => this.totalIncome = v);
-  this.txService.getTotalExpense().subscribe((v: number) => this.totalExpense = v);
-}
+  ngOnInit() {
+    this.txService.getTotalIncome().subscribe((v: number) => this.totalIncome = v);
+    this.txService.getTotalExpense().subscribe((v: number) => this.totalExpense = v);
+  }
 
   get balance() {
     return this.totalIncome - this.totalExpense;

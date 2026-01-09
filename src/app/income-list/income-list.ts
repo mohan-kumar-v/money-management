@@ -12,7 +12,7 @@ import { map } from 'rxjs';
 
 @Component({
   selector: 'app-income-list',
-  imports: [FormsModule,CommonModule,Header,Nav,Balance,Addbutton,Footer],
+  imports: [FormsModule, CommonModule, Header, Nav, Balance, Addbutton, Footer],
   templateUrl: './income-list.html',
   styleUrl: './income-list.css',
 })
@@ -20,33 +20,27 @@ export class IncomeList {
 
   incomeList$: any;
 
-  constructor(private txService: Transaction,private router: Router) {
-    //  this.transactions = this.txService.getTransactions();
-  }
+  constructor(
+    private txService: Transaction,
+    private router: Router) {}
 
   ngOnInit() {
     this.incomeList$ = this.txService.getTransactions().pipe(
-  map(list =>
-    list
-      .filter(t => t.type === 'income')
-      .map(t => ({
-        ...t,
-        date: t.date?.toDate ? t.date.toDate() : t.date
-      }))
-  )
-);
-}
-  // ngOnInit() {
-  //  this.txService.getTransactions().subscribe(all => {
-  //   this.transactions = all.filter(t => t.type === 'income');
-  // });
-  // }/
-
+      map(list =>
+        list
+          .filter(t => t.type === 'income')
+          .map(t => ({
+            ...t,
+            date: t.date?.toDate ? t.date.toDate() : t.date
+          }))
+      )
+    );
+  }
+  
   edit(t: any) {
-   if (t.type === 'income') {
-  this.router.navigate(['/add-income'], { queryParams: { id: t.id } });
-}
-    //  this.router.navigate(['/add-income'], { queryParams: { id: t.id } });
+    if (t.type === 'income') {
+      this.router.navigate(['/add-income'], { queryParams: { id: t.id } });
+    }
   }
 
   delete(t: any) {
@@ -54,5 +48,5 @@ export class IncomeList {
       this.txService.deleteById(t.id);
     }
   }
-  
+
 }

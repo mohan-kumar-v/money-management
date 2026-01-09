@@ -7,13 +7,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-expense',
-  imports: [FormsModule,CommonModule,Header],
+  imports: [FormsModule, CommonModule, Header],
   templateUrl: './add-expense.html',
   styleUrl: './add-expense.css',
 })
 
 export class AddExpense implements OnInit {
-  
+
   id: any = null;
 
   expense: any = {
@@ -40,8 +40,8 @@ export class AddExpense implements OnInit {
     private txService: Transaction,
     private route: ActivatedRoute,
     private router: Router,
-    private cdr:ChangeDetectorRef
-  ) {}
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.queryParamMap.get('id');
@@ -86,18 +86,3 @@ export class AddExpense implements OnInit {
     this.router.navigate(['/expense-list']);
   }
 }
-
-//   ngOnInit() {
-//     this.id = this.route.snapshot.queryParamMap.get('id');
-//   if (!this.id) return;
-//   this.txService.getTransactionById(this.id).then(doc => {
-//     if (doc && doc.exists()) {
-//       const data: any = doc.data();
-//       this.expense = {
-//         id: doc.id,
-//         ...data,
-//         date: this.toDateTimeLocal(data.date)
-//       };
-//     }
-//   });
-// }

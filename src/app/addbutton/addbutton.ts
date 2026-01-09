@@ -15,11 +15,11 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class Addbutton {
 
-  
+
   @Input() label = 'Add';
   @Input() navigateTo?: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   onClick() {
     if (this.navigateTo) {

@@ -8,7 +8,7 @@ import { combineLatest } from 'rxjs';
 @Component({
   selector: 'app-chart',
   standalone: true,
-  imports: [CommonModule, BaseChartDirective ],
+  imports: [CommonModule, BaseChartDirective],
   templateUrl: './chart.html',
   styleUrl: './chart.css'
 })
@@ -19,19 +19,20 @@ export class Chart implements OnInit {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
   isBrowser() {
-  return typeof window !== 'undefined';
-}
+    return typeof window !== 'undefined';
+  }
 
   chartData: ChartConfiguration<'pie'>['data'] = {
     labels: ['Income', 'Expense'],
-    datasets: [{ data: [0, 0],
-       backgroundColor: ['#2ecc71', '#e74c3c']
+    datasets: [{
+      data: [0, 0],
+      backgroundColor: ['#2ecc71', '#e74c3c']
     }]
   };
 
   chartOptions: ChartConfiguration<'pie'>['options'] = {};
 
-  constructor(private txService: Transaction) {}
+  constructor(private txService: Transaction) { }
 
   ngOnInit() {
     combineLatest([

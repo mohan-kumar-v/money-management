@@ -8,78 +8,52 @@
   <div class="card shadow-sm rounded-3">
     <div class="card-body">
 
-  <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()">
 
-  <!-- Date -->
-  <div class="mb-3">
-    <label class="form-label">Date</label>
-    <input
-      type="datetime-local"
-      class="form-control"
-      [(ngModel)]="expense.date"
-      name="date"
-      required
-    />
-  </div>
+        <!-- Date -->
+        <div class="mb-3">
+          <label class="form-label">Date</label>
+          <input type="datetime-local" class="form-control" [(ngModel)]="expense.date" name="date" required />
+        </div>
 
-  <!-- Amount -->
-  <div class="mb-3">
-    <label class="form-label">Amount</label>
-    <input
-      type="number"
-      class="form-control"
-      [(ngModel)]="expense.amount"
-      name="amount"
-      required
-    />
-  </div>
+        <!-- Amount -->
+        <div class="mb-3">
+          <label class="form-label">Amount</label>
+          <input type="number" class="form-control" [(ngModel)]="expense.amount" name="amount" required />
+        </div>
 
-  <!-- Category -->
-  <div class="mb-3">
-    <label class="form-label">Category</label>
-    <select
-      class="form-select"
-      [(ngModel)]="expense.category"
-      name="category"
-      required
-    >
-      <option value="">Select</option>
-      <option *ngFor="let c of expenseCategories" [value]="c">
-        {{ c }}
-      </option>
-    </select>
-  </div>
+        <!-- Category -->
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <select class="form-select" [(ngModel)]="expense.category" name="category" required>
+            <option value="">Select</option>
+            <option *ngFor="let c of expenseCategories" [value]="c">
+              {{ c }}
+            </option>
+          </select>
+        </div>
 
-  <!-- Account -->
-  <div class="mb-3">
-    <label class="form-label">Account</label>
-    <select
-      class="form-select"
-      [(ngModel)]="expense.account"
-      name="account"
-    >
-      <option value="">Select</option>
-      <option value="cash">Cash</option>
-      <option value="upi">UPI</option>
-    </select>
-  </div>
+        <!-- Account -->
+        <div class="mb-3">
+          <label class="form-label">Account</label>
+          <select class="form-select" [(ngModel)]="expense.account" name="account">
+            <option value="">Select</option>
+            <option value="cash">Cash</option>
+            <option value="upi">UPI</option>
+          </select>
+        </div>
 
-  <!-- Note -->
-  <div class="mb-3">
-    <label class="form-label">Note</label>
-    <input
-      type="text"
-      class="form-control"
-      [(ngModel)]="expense.note"
-      name="note"
-    />
-  </div>
+        <!-- Note -->
+        <div class="mb-3">
+          <label class="form-label">Note</label>
+          <input type="text" class="form-control" [(ngModel)]="expense.note" name="note" />
+        </div>
 
-  <button class="btn btn-primary" type="submit">
-    {{ id ? 'Update Expense' : 'Add Expense' }}
-  </button>
+        <button class="btn btn-primary" type="submit">
+          {{ id ? 'Update Expense' : 'Add Expense' }}
+        </button>
 
-</form>
+      </form>
 
     </div>
   </div>
